@@ -1,0 +1,372 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:regular,500,700&display=swap&subset=cyrillic-ext);
+
+$fontFamily: "Roboto";
+$maxWidthContainer: 1110;
+$minWidth: 320;
+$maxWidth: 1920;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 680;
+$md4: 450;
+
+$gray: #EFEFEF;
+$accent: #66C05D;
+$dark: #333333;
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+body {
+    font-family: $fontFamily;
+    background: $gray;
+    padding: 0px;
+    margin: 0px;
+    font-size: 14px;
+    line-height: 16.5 / 14 * 100%;
+}
+
+a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+._container {
+    max-width: $maxWidthContainer + px;
+    margin: 0 auto;
+
+    @media (max-width: ($md1+px)) {
+        max-width: 970px;
+    }
+
+    @media (max-width: ($md2+px)) {
+        max-width: 750px;
+    }
+
+    @media (max-width: ($md2+px)) {
+        max-width: none;
+        padding: 0 10px;
+    }
+}
+
+.header {
+    padding: 0px;
+    margin: 0px;
+    background: white;
+
+    &__menu {}
+}
+
+.menu {
+    &__icon {}
+
+    &__body {}
+
+    &__list {
+        background: $gray;
+        display: flex;
+        height: 30px;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0;
+
+        li {
+            margin: 0px 0px 0px 30px;
+            list-style: none;
+
+            @media (min-width: ($md2+px)) {
+                :hover {
+                    color: $accent;
+                    transition: color 0.3s ease 0s;
+                }
+            }
+        }
+    }
+}
+
+.beauty {
+    padding: 20px 0;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+    }
+
+    &__call {
+        display: flex;
+        align-items: center;
+    }
+
+    &__logo {
+        flex: 0 0 80px;
+        height: 80px;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__title {
+        font-size: 36px;
+        color: $accent;
+        font-weight: 700;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    &__number {
+        font-size: 16px;
+        padding: 0 40px;
+    }
+
+    &__btn {}
+}
+
+.btn {
+    background: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 36px;
+    border: 2px solid $accent;
+    border-radius: 15px;
+    width: 166px;
+}
+
+
+.promo {
+    background: no-repeat center top url(../img/Rectangle_2.png);
+    padding: 190px 0;
+    font-size: 14px;
+    font-weight: 400;
+
+    &__container {
+        color: white;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    &__title {
+        margin: 0 0 40px 0;
+    }
+
+    &__description {
+        margin: 0 0 45px 0;
+        max-width: 308px;
+        line-height: 20px;
+
+    }
+
+    &__btn {
+        border-color: white;
+        line-height: 16.41px;
+    }
+}
+
+h2 {
+    font-size: 48px;
+    line-height: 56 / 48 * 100%;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 24px;
+    line-height: 28.13 / 24 * 100%;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 18px;
+    line-height: 21.09px;
+    font-weight: 700;
+}
+
+.offers {
+    padding: 65px 0 100px 0;
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    &__car {
+        img {
+            width: 188px;
+            height: 60px;
+        }
+    }
+
+    &__img {
+        width: 125px;
+        height: 166px;
+        margin: 0 0 20px 0;
+    }
+
+    &__list {
+        padding: 15px 0 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__item {
+        padding: 0px 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: white;
+        width: 255px;
+        height: 363px;
+    }
+
+    &__description {
+        width: 195px;
+        margin: 0 0 20px 0;
+    }
+
+    &__price {
+        font-size: 21px;
+        line-height: 24.61px;
+        font-weight: 500;
+        margin: 0 0 20px 0;
+    }
+
+    &__btn {
+        background: $accent;
+        color: white;
+    }
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 132px 0;
+    line-height: 19.69px;
+
+    &__item {
+        padding: 35px 40px;
+        width: 460px;
+        height: 212px;
+        background: $accent;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__left {}
+
+    &__description {
+        margin: 0 0 30px 0;
+    }
+
+    &__title {
+        margin: 0 0 25px 0;
+    }
+
+    &__email {
+        background: white;
+        border-radius: 15px;
+        padding: 9px 25px;
+        color: #c4c4c4;
+    }
+
+    &__btn {
+        border-color: white;
+        line-height: 16.41px;
+    }
+}
+
+.mail {}
+
+.map {
+    display: flex;
+    align-items: center;
+}
+
+
+.contacts {
+    background: white;
+    padding: 37px 0;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__left {
+        width: 380px;
+    }
+
+    &__social {
+        width: 236px;
+        height: 45px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        background: no-repeat center url(../img/ellipse.png);
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {}
+    }
+
+    &__address {}
+
+    &__call {}
+
+    &__number {
+        font-size: 16px;
+        padding: 0 40px;
+    }
+
+    &__button {}
+}
+
+.credits {
+    padding: 25px 0;
+    font-size: 12px;
+    line-height: 14.06 / 12 * 100%;
+    color: #828282;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__info {}
+
+    &__politics {}
+}
