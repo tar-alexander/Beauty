@@ -45,6 +45,15 @@ a {
     flex-direction: column;
 }
 
+::placeholder {
+    color: #c4c4c4;
+}
+
+a:hover {
+    color: $accent;
+    transition: color 0.3s ease 0s;
+}
+
 ._container {
     max-width: $maxWidthContainer + px;
     margin: 0 auto;
@@ -67,15 +76,9 @@ a {
     padding: 0px;
     margin: 0px;
     background: white;
-
-    &__menu {}
 }
 
 .menu {
-    &__icon {}
-
-    &__body {}
-
     &__list {
         background: $gray;
         display: flex;
@@ -138,7 +141,10 @@ a {
         padding: 0 40px;
     }
 
-    &__btn {}
+    &__btn:hover {
+        background: $gray;
+        transition: all 0.3s ease 0s;
+    }
 }
 
 .btn {
@@ -151,6 +157,12 @@ a {
     border: 2px solid $accent;
     border-radius: 15px;
     width: 166px;
+}
+
+.btn:hover {
+    background: $gray;
+    color: $accent;
+    transition: all 0.3s ease 0s;
 }
 
 
@@ -278,8 +290,6 @@ h4 {
         justify-content: space-between;
     }
 
-    &__left {}
-
     &__description {
         margin: 0 0 30px 0;
     }
@@ -292,7 +302,6 @@ h4 {
         background: white;
         border-radius: 15px;
         padding: 9px 25px;
-        color: #c4c4c4;
     }
 
     &__btn {
@@ -300,8 +309,6 @@ h4 {
         line-height: 16.41px;
     }
 }
-
-.mail {}
 
 .map {
     display: flex;
@@ -338,20 +345,12 @@ h4 {
         display: flex;
         align-items: center;
         justify-content: center;
-
-        img {}
     }
-
-    &__address {}
-
-    &__call {}
 
     &__number {
         font-size: 16px;
         padding: 0 40px;
     }
-
-    &__button {}
 }
 
 .credits {
@@ -365,8 +364,4 @@ h4 {
         justify-content: space-between;
         align-items: center;
     }
-
-    &__info {}
-
-    &__politics {}
 }

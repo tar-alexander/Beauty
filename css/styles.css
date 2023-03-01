@@ -31,6 +31,19 @@ a {
   flex-direction: column;
 }
 
+::-moz-placeholder {
+  color: #c4c4c4;
+}
+
+::placeholder {
+  color: #c4c4c4;
+}
+
+a:hover {
+  color: #66C05D;
+  transition: color 0.3s ease 0s;
+}
+
 ._container {
   max-width: 1110px;
   margin: 0 auto;
@@ -57,6 +70,7 @@ a {
   margin: 0px;
   background: white;
 }
+
 .menu__list {
   background: #EFEFEF;
   display: flex;
@@ -109,6 +123,11 @@ a {
   font-size: 16px;
   padding: 0 40px;
 }
+.beauty__btn:hover {
+  background: #EFEFEF;
+  transition: all 0.3s ease 0s;
+}
+
 .btn {
   background: transparent;
   display: inline-flex;
@@ -119,6 +138,12 @@ a {
   border: 2px solid #66C05D;
   border-radius: 15px;
   width: 166px;
+}
+
+.btn:hover {
+  background: #EFEFEF;
+  color: #66C05D;
+  transition: all 0.3s ease 0s;
 }
 
 .promo {
@@ -239,7 +264,6 @@ h4 {
   background: white;
   border-radius: 15px;
   padding: 9px 25px;
-  color: #c4c4c4;
 }
 .actions__btn {
   border-color: white;
@@ -282,6 +306,7 @@ h4 {
   font-size: 16px;
   padding: 0 40px;
 }
+
 .credits {
   padding: 25px 0;
   font-size: 12px;
