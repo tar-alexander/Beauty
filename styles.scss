@@ -5,7 +5,7 @@ $maxWidthContainer: 1110;
 $minWidth: 320;
 $maxWidth: 1920;
 $md1: $maxWidthContainer + 12;
-$md2: 991.98;
+$md2: 992;
 $md3: 680;
 $md4: 450;
 
@@ -13,7 +13,10 @@ $gray: #EFEFEF;
 $accent: #66C05D;
 $dark: #333333;
 
-* {
+/* Обнуление */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     border: 0;
@@ -23,18 +26,41 @@ $dark: #333333;
     background: transparent;
 }
 
-body {
-    font-family: $fontFamily;
-    background: $gray;
-    padding: 0px;
-    margin: 0px;
-    font-size: 14px;
-    line-height: 16.5 / 14 * 100%;
-}
-
 a {
     text-decoration: none;
     color: currentColor;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+/* */
+
+body {
+    font-family: $fontFamily;
+    background: $gray;
+    font-size: 14px;
+    line-height: calc(16 / 14 * 100%);
 }
 
 .wrapper {
@@ -54,19 +80,57 @@ a:hover {
     transition: color 0.3s ease 0s;
 }
 
+h2 {
+    font-size: 48px;
+    line-height: calc(56 / 48 * 100%);
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 24px;
+    line-height: calc(28 / 24 * 100%);
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 18px;
+    line-height: calc(21 / 18 * 100%);
+    font-weight: 700;
+}
+
+.btn {
+    background: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 36px;
+    border: 2px solid $accent;
+    border-radius: 15px;
+    width: 166px;
+}
+
+.btn:hover {
+    background: $gray;
+    color: $accent;
+    transition: all 0.3s ease 0s;
+}
+
 ._container {
     max-width: $maxWidthContainer + px;
     margin: 0 auto;
+    padding: 0px 15px;
+    box-sizing: content-box;
 
-    @media (max-width: ($md1+px)) {
+    @media screen and (max-width: ($md1+px)) {
         max-width: 970px;
     }
 
-    @media (max-width: ($md2+px)) {
+    @media screen and (max-width: ($md2+px)) {
         max-width: 750px;
     }
 
-    @media (max-width: ($md2+px)) {
+    @media screen and (max-width: ($md3+px)) {
         max-width: none;
         padding: 0 10px;
     }
@@ -82,21 +146,23 @@ a:hover {
     &__list {
         background: $gray;
         display: flex;
-        height: 30px;
+        flex-wrap: wrap;
+        min-height: 30px;
         align-items: center;
         justify-content: center;
         padding: 10px 0;
 
         li {
-            margin: 0px 0px 0px 30px;
-            list-style: none;
-
             @media (min-width: ($md2+px)) {
                 :hover {
                     color: $accent;
                     transition: color 0.3s ease 0s;
                 }
             }
+        }
+
+        li:not(:first-child) {
+            margin: 0px 0px 0px 30px;
         }
     }
 }
@@ -107,6 +173,7 @@ a:hover {
     &__container {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
 
     &__icon {
@@ -117,6 +184,7 @@ a:hover {
     &__call {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
     }
 
     &__logo {
@@ -147,25 +215,6 @@ a:hover {
     }
 }
 
-.btn {
-    background: transparent;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 36px;
-    border: 2px solid $accent;
-    border-radius: 15px;
-    width: 166px;
-}
-
-.btn:hover {
-    background: $gray;
-    color: $accent;
-    transition: all 0.3s ease 0s;
-}
-
-
 .promo {
     background: no-repeat center top url(../img/Rectangle_2.png);
     padding: 190px 0;
@@ -177,6 +226,7 @@ a:hover {
         display: flex;
         align-items: flex-start;
         flex-direction: column;
+        flex-wrap: wrap;
     }
 
     &__title {
@@ -186,32 +236,17 @@ a:hover {
     &__description {
         margin: 0 0 45px 0;
         max-width: 308px;
-        line-height: 20px;
+        line-height: calc(20 / 14 * 100%);
 
     }
 
     &__btn {
         border-color: white;
-        line-height: 16.41px;
     }
-}
 
-h2 {
-    font-size: 48px;
-    line-height: 56 / 48 * 100%;
-    font-weight: 700;
-}
-
-h3 {
-    font-size: 24px;
-    line-height: 28.13 / 24 * 100%;
-    font-weight: 700;
-}
-
-h4 {
-    font-size: 18px;
-    line-height: 21.09px;
-    font-weight: 700;
+    *:last-child {
+        margin-bottom: 0;
+    }
 }
 
 .offers {
@@ -241,6 +276,7 @@ h4 {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
 
     &__item {
@@ -253,6 +289,10 @@ h4 {
         background: white;
         width: 255px;
         height: 363px;
+
+        *:last-child {
+            margin-bottom: 0;
+        }
     }
 
     &__description {
@@ -262,7 +302,7 @@ h4 {
 
     &__price {
         font-size: 21px;
-        line-height: 24.61px;
+        line-height: calc(25 / 21 * 100%);
         font-weight: 500;
         margin: 0 0 20px 0;
     }
@@ -276,8 +316,8 @@ h4 {
 .actions {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     padding: 0 0 132px 0;
-    line-height: 19.69px;
 
     &__item {
         padding: 35px 40px;
@@ -288,10 +328,15 @@ h4 {
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        *:last-child {
+            margin-bottom: 0;
+        }
     }
 
     &__description {
         margin: 0 0 30px 0;
+        line-height: calc(20 / 14 * 100%);
     }
 
     &__title {
@@ -306,7 +351,6 @@ h4 {
 
     &__btn {
         border-color: white;
-        line-height: 16.41px;
     }
 }
 
@@ -324,6 +368,7 @@ h4 {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
     }
 
     &__left {
@@ -356,7 +401,7 @@ h4 {
 .credits {
     padding: 25px 0;
     font-size: 12px;
-    line-height: 14.06 / 12 * 100%;
+    line-height: calc(14 / 12 * 100%);
     color: #828282;
 
     &__container {
